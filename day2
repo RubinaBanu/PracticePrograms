@@ -1,0 +1,88 @@
+package com.PracticePrograms.Interview;
+
+import java.util.Scanner;
+
+public class ProgramDay2 
+{
+
+	public static void main(String[] args) 
+	{
+		
+        ProgramDay2 pd=new ProgramDay2();
+        pd.factorial_program1();
+        pd.fibonacci_series();
+        pd.prime_number();
+       
+	}
+
+
+
+
+/*Enter the number to find prime: 
+5
+The given number 5 is a prime number*/
+	private void prime_number() 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number to find prime: ");
+		int num=sc.nextInt();
+		int count=0;
+		for(int div=2;div<num;div++)
+		{
+			if(num%div==0)
+			{
+				count++;
+				break;
+			}
+		}
+		if(count==0)
+			
+				System.out.println("The given number "+num+" is a prime number");
+			
+			else
+			
+				System.out.println("The given number "+num+" is a not prime number");
+			
+		}
+
+	
+/*Enter the number of count for fibbonacci series : 
+  10
+  0 1 1 2 3 5 8 13 21 34 */
+
+
+	public void fibonacci_series() 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number of count for fibbonacci series : ");
+		int n=sc.nextInt();
+		int a=0,b=0,c=1;
+		for(int i=1;i<=n;i++)
+		{
+			a=b;
+			b=c;
+			c=a+b;
+			System.out.print(a+" ");
+		}
+		
+	}
+
+/*Enter the number to find factorial digits: 
+  5
+  Factorial of 5 is 120*/
+	public void factorial_program1() 
+	{   
+		Scanner sc =new Scanner(System.in);
+	    System.out.println("Enter the number to find factorial digits: ");
+	    
+		int number=sc.nextInt();
+		int factorial=1;
+		for(int i=1;i<=number;i++)
+		{ //factorial=factorial*i;
+			factorial*=i;
+		}
+		System.out.println("Factorial of "+number +" is "+ factorial);
+	}
+
+}
+
