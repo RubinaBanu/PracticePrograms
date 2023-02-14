@@ -1,0 +1,104 @@
+import java.util.Scanner;
+
+public class ProgramDay2 
+{
+
+	public static void main(String[] args) 
+	{
+		
+        ProgramDay2 pd=new ProgramDay2();
+        pd.armstrong();
+        pd.palindrome();
+        pd.perfect_number();
+	}
+/*Enter the number to check palindrome
+  121
+  The given number is palindrome */
+private void palindrome() 
+{
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the number to check palindrome");
+	int num=sc.nextInt();
+	int num1=num;
+	int reverse=0;
+	int rem;
+	while(num1>0)//while(121>0)-->true //while(12>0) -->true//while(1>0)-->true // while(0>0)-->false
+	{
+		rem=num1%10;//rem=121%10--->rem=1 // rem=12%10-->rem=2 //rem=1%10-->1
+		reverse=(reverse*10)+rem;//reverse=(0*10)+1--> rev=1 //reverse=(1*10)+2-->rev=12 // reverse=(12*10)+1-->120+1-->121
+		num1=num1/10;//num1=121/10--->num1=12//num1=12/10-->num1=1 // num1=1/10;-->num1=0 
+		//checking while condition
+	}
+	
+	if(num==reverse)
+	{
+		System.out.println("The given number is palindrome");
+	}
+	else
+	{
+		System.out.println("The given number is not a palindrome");
+	}
+}
+
+
+/*Enter the number to find armstrong: 
+  153
+  The given number is armstrong number*/
+
+private void armstrong() 
+{
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the number to find armstrong: ");
+	int num=sc.nextInt();
+	int Cubesum=0,r;
+	int num1=num;
+	while(num1!=0)//while(num>0)//while(153>0)-->true//while(15>0)-->true//while(1>0)-->true//while(0>0)--false
+	{
+		r=num1%10;//r=153%10-->3//r=15%10-->5//r=5%10=1
+		Cubesum=Cubesum+(r*r*r);//Cubesum=Cubesum+Math.pow(r,3);//cubesum=0+(3*3*3)-->cs=27//cs=27+(5*5*5)-->cs=27+125-->cs=152//cs=152+(1*1*1)-->cs=153
+		num1=num1/10;//num1=153/10-->15//num=15/10=1//num=1/10=0
+		
+	}
+	if(num==Cubesum)
+	{
+		System.out.println("The given number is armstrong number");
+	}
+	else
+	{
+		System.out.println("The given number is not an armstrong number");
+	}
+	
+	}
+
+/*
+Enter the number to check
+6
+The given number is perfect number
+	 */
+//perfect num is defined as positive integer is equal to the sum of the proper positive divisors excluding the number itself
+	//for eg: 6 is perfect number--divisors of 6 are 1,2,3 excluding 6-->the sum of divisors are 1+2+3=6 which is perfect number
+private void perfect_number() 
+   {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the number to check");
+	int num=sc.nextInt();//num=6;
+	int sum=0;
+	for(int i=1;i<num;i++)//for(int i=1;i<6;i++)-->i=1,2,3,4,5
+	{
+		if(num%i==0)//if(6%1==0)-->true//6%2==0-->true//6%3==0-->true//6%4==0-->false//6%5==0-->false
+		{
+			sum=sum+i;//sum=0+1-->sum=1//sum=1+2-->sum=3;//sum=3+3=6;
+		}
+	}
+	if(num==sum)//(6==6)
+	{
+		System.out.println("The given number is perfect number");
+	}
+	else
+	{
+		System.out.println("The given number is not a perfect number");
+	}
+	}
+
+}
+
