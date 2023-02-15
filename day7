@@ -1,0 +1,94 @@
+package com.PracticePrograms.Interview;
+
+import java.util.Scanner;
+
+public class ProgramDay5 
+{
+	
+	public void count_of_digits()
+	{
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the number :");
+	int n=sc.nextInt();
+	int count=0;
+	while(n!=0)
+	{
+	n=n/10;
+	count++;
+	}
+	System.out.println("No of digits in given number is "+count);
+	}
+	/*
+	 OUTPUT
+	 Enter the number :
+     123
+     No of digits in given number is 3
+	 */
+	public void sum_of_digits()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number : ");
+		int n=sc.nextInt();
+		int rem,sum=0;
+		while(n>0)
+		{
+			rem=n%10;
+			sum=sum+rem;
+			n=n/10;
+		}
+		System.out.println("The sum of digits are " + sum);
+	}
+	/*
+	 OUTPUT
+	 Enter the number : 
+     342
+     The sum of digits are 9
+	 */
+	public void reverse_gn_number()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number : ");
+		int num=sc.nextInt();
+		int rem,reverse=0;
+		while(num>0)
+		{
+			rem=num%10;
+			reverse=(reverse*10)+rem;
+			num=num/10;
+		}
+		System.out.println("The reverse digits of given number is "+reverse);
+	}
+	/*
+	Enter the number : 
+    13678
+    The reverse digits of given number is 87631
+	 */
+
+	private void sum_of_natural_numbers() 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number up to which the sum to find: ");
+		int n=sc.nextInt();
+		int sum=0;
+		for(int i=1;i<=n;i++)
+		{
+			sum=sum+i;
+		}
+		System.out.println("The sum of natural numbers are "+sum);
+	}
+	/*
+	 OUTPUT
+	Enter the number up to which the sum to find: 
+    5
+    The sum of natural numbers are 15
+	 */
+
+	public static void main(String[] args)
+	{
+	ProgramDay5 pd=new ProgramDay5();
+	pd.count_of_digits();
+	pd.sum_of_digits();
+	pd.reverse_gn_number();
+	pd.sum_of_natural_numbers();
+	}
+}
