@@ -1,0 +1,118 @@
+class Pp
+{
+public static void main(String[] args)
+{
+Pp.find_number();
+Pp.find_strong_number();
+Pp.find_perfect_number();
+Pp.find_gcd();
+Pp.find_lcm();
+}
+public static void find_number()
+{
+int rem=0;
+int sum=0;
+int n=9;
+int num=n*n;
+
+while(num>0)
+{
+rem=num%10;
+sum=sum+rem;
+num=num/10;
+}
+if(n==sum)
+{
+System.out.println("The given number is neon");
+}
+else
+System.out.println("The given number is not neon");
+}
+ /*OUTPUT : The given number is neon */
+
+public static void find_strong_number()
+{
+int rem=0;
+int num1=145;
+int num=num1;
+
+int sum=0;
+while(num>0)
+{
+rem=num%10;
+int fact=1;
+int i;
+for(i=1;i<=rem;i++)
+{
+fact=fact*i;
+}
+while(i<=rem)
+{
+fact=fact*i;
+i++;
+}
+sum=sum+fact;
+num=num/10;
+}
+if(sum==num1)
+{
+System.out.println("The given number is a strong number");
+}
+else
+{
+System.out.println("The given number is not a strong number");
+}
+}
+ /*OUTPUT : The given number is strong number */
+public static void find_perfect_number()
+{
+int num=496;
+int sum=0;
+for(int i=1;i<=num/2;i++)
+{
+if(num%i==0)
+{
+sum=sum+i;
+}
+}
+if(sum==num)
+{
+System.out.println("The given number is perfect number");
+}
+else
+{
+System.out.println("The given number is not a perfect number");
+}
+}
+ /*OUTPUT : The given number is perfect number*/
+public static void find_gcd()
+{
+int num1=12,num2=8,gcd=1;
+for(int i=1;i<=num1&&i<=num2;i++)
+{
+if(num1%i==0&&num2%i==0)
+{
+gcd=i;
+}
+}
+System.out.println("GCD of the given number is "+gcd);
+}
+
+/*OUTPUT : GCD of the given number is 4 */
+
+public static void find_lcm()
+{
+int gcd=1,num1=12,num2=9;
+for(int i=1;i<=num1&& i<=num2;i++)
+{
+if(num1%i==0 && num2%i==0)
+{
+gcd=i;
+}
+}
+int lcm=(num1*num2)/gcd;
+System.out.println("The lcm of given number is "+ lcm );
+}
+}
+ /*OUTPUT : The lcm of given number is 36 */
+
